@@ -1,0 +1,42 @@
+
+CREATE DATABASE PreciousMemories;
+
+
+USE PreciousMemoriesDB;
+
+
+CREATE TABLE Portfolio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    image BLOB NOT NULL  
+);
+
+
+CREATE TABLE Gallery (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image BLOB NOT NULL,  
+    category VARCHAR(100)
+);
+
+
+CREATE TABLE Experience (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    description TEXT NOT NULL,
+    skills VARCHAR(255),
+    image BLOB  
+);
+
+
+CREATE TABLE Admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
